@@ -163,7 +163,7 @@ int lookUpBook(bookType **books, int code, string key)
   return -1;
 }
 void addBook(bookType **books, int code, int index){
-  if(bookType::getBookCount() < DB_SIZE)
+  if(bookType::getBookCount() < DB_SIZE || code == 2)
   {
     string tempTitle = "EMPTY";
     string tempISBN = "EMPTY";
@@ -201,7 +201,7 @@ void addBook(bookType **books, int code, int index){
       {
         cout << "\033[2J\033[1;1H";
         cout << "Serendipity Booksellers" << endl;
-        cout << " Add Book" << endl << endl;
+        cout << " " << action << "  " << "Book" << endl << endl;
         cout << "Database size: " << DB_SIZE << " Current book count: "
         << bookType::getBookCount() << endl;
         cout << setw(36) << " " << "--Pending values" << endl;
