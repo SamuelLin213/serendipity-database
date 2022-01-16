@@ -163,7 +163,7 @@ int lookUpBook(bookType **books, int code, string key)
   return -1;
 }
 void addBook(bookType **books, int code, int index){
-  if(bookType::getBookCount() < 20)
+  if(bookType::getBookCount() < DB_SIZE)
   {
     string tempTitle = "EMPTY";
     string tempISBN = "EMPTY";
@@ -282,7 +282,7 @@ void addBook(bookType **books, int code, int index){
           changed = true;
           break;
         case 9:
-          if(bookType::getBookCount() < 20)
+          if(bookType::getBookCount() < DB_SIZE)
           {
             if(code == 1)
             {
